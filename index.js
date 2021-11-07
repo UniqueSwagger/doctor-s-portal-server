@@ -59,12 +59,10 @@ const run = async () => {
       const email = req.query.email;
       const date = req.query.date;
       const user = req.decodedEmail;
-      if (user === email) {
-        const result = await appointmentCollection
-          .find({ email: email, date: date })
-          .toArray();
-        res.send(result);
-      }
+      const result = await appointmentCollection
+        .find({ email: email, date: date })
+        .toArray();
+      res.send(result);
     });
 
     //getting admin

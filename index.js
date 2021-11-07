@@ -64,8 +64,6 @@ const run = async () => {
           .find({ email: email, date: date })
           .toArray();
         res.send(result);
-      } else {
-        res.status(401).send({ message: "unAuthorized" });
       }
     });
 
